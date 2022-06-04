@@ -176,6 +176,14 @@ Customize label
 set -g @dracula-ram-usage-label "RAM"
 ```
 
+### network options
+
+Customize network ping host list
+
+```bash
+set -g @dracula-network-hostlist "google.com github.com example.com"
+```
+
 #### network-ping options
 
 You can configure which server (hostname, IP) you want to ping and at which rate (in seconds). Default is google.com at every 5 seconds.
