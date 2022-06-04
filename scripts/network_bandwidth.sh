@@ -1,8 +1,18 @@
 #!/usr/bin/env bash
 
+# configuration
+# @dracula-network-bandwidth
+# @dracula-network-bandwidth-upload-label "↑"
+# @dracula-network-bandwidth-download-label "↓"
+# @dracula-network-bandwidth-separation-label "•"
+
 INTERVAL="1"  # update interval in seconds
 
 network_name=$(tmux show-option -gqv "@dracula-network-bandwidth")
+upload_label = $(get_tmux_option "@dracula-network-bandwidth-upload-label" "↑")
+download_label = $(get_tmux_option "@dracula-network-bandwidth-download-label" "↓")
+separation_label = $(get_tmux_option "@dracula-network-bandwidth-separation-label" "•")
+
 
 main() {
   while true
@@ -45,7 +55,7 @@ main() {
       output_upload_unit="kB/s"
     fi
 
-    echo "↓ $output_download $output_download_unit • ↑ $output_upload $output_upload_unit"
+    echo "$upload_label $output_download $output_download_unit $separation_label $download_label $output_upload $output_upload_unit"
   done
 }
 main

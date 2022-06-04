@@ -193,6 +193,27 @@ set -g @dracula-ping-server "google.com"
 set -g @dracula-ping-rate 5
 ```
 
+#### network-bandwidth options
+
+Customize upload label
+
+```bash
+set -g @dracula-network-bandwidth-upload-label "↑"
+```
+
+Customize download label
+
+```bash
+set -g @dracula-network-bandwidth-download-label "↓"
+```
+
+Customize separation label
+
+```bash
+set -g @dracula-network-bandwidth-separation-label "•"
+```
+
+
 #### time options
 
 Disable timezone
