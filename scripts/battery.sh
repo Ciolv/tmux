@@ -94,13 +94,13 @@ battery_status()
 
   case $status in
     discharging|Discharging)
-      echo $(get_tmux_option "@dracula-discharging-label")
+      echo $(get_tmux_option "@dracula-battery-discharging-label")
       ;;
     high)
       echo $(get_tmux_option "@dracula-battery-high-label" "")
       ;;
     charging)
-      echo $(get_tmux_option "@dracula-charging-label" "AC")
+      echo $(get_tmux_option "@dracula-battery-charging-label" "AC")
       ;;
     *)
       echo $(get_tmux_option "@dracula-battery-noinfo-label" "?")
