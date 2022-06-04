@@ -2,9 +2,20 @@
 # setting the locale, some users have issues with different locales, this forces the correct one
 export LC_ALL=en_US.UTF-8
 
+# configuration
+# @dracula-weather-snow-label "❄"
+# @dracula-weather-rain-label "☂"
+# @dracula-weather-cloud-label "☁"
+# @dracula-weather-sun-label "☀"
+
 fahrenheit=$1
 location=$2
 fixedlocation=$3
+
+snow_label=$(get_tmux_option "@dracula-weather-snow-label" "❄")
+rain_label=$(get_tmux_option "@dracula-weather-rain-label" "☂")
+cloud_label=$(get_tmux_option "@dracula-weather-cloud-label" "☁")
+sun_label=$(get_tmux_option "@dracula-weather-sun-label" "☀")
 
 display_location()
 {
@@ -48,15 +59,15 @@ forecast_unicode()
   weather_condition=$(echo $weather_condition | awk '{print tolower($0)}')
 
   if [[ $weather_condition =~ 'snow' ]]; then
-    echo '❄ '
+    echo "$snow_label "
   elif [[ (($weather_condition =~ 'rain') || ($weather_condition =~ 'shower')) ]]; then
-    echo '☂ '
+    echo "$rain_label "
   elif [[ (($weather_condition =~ 'overcast') || ($weather_condition =~ 'cloud')) ]]; then
-    echo '☁ '
+    echo "$cloud_label "
   elif [[ $weather_condition = 'NA' ]]; then
     echo ''
   else
-    echo '☀ '
+    echo "$sun_label "
   fi
 }
 

@@ -268,3 +268,26 @@ Switch from default fahrenheit to celsius
 set -g @dracula-show-fahrenheit false
 ```
 
+Customize snow label
+
+```bash
+set -g @dracula-weather-snow-label "❄"
+```
+
+Customize rain label
+
+```bash
+set -g @dracula-rain-snow-label "☂"
+```
+
+Customize cloud label
+
+```bash
+set -g @dracula-cloud-snow-label "☁"
+```
+
+Customize sun label
+
+```bash
+set -g @dracula-sun-snow-label "☀"
+```
