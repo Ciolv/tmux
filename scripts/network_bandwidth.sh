@@ -9,9 +9,9 @@
 INTERVAL="1"  # update interval in seconds
 
 network_name=$(get_tmux_option "@dracula-network-bandwidth")
-upload_label = $(get_tmux_option "@dracula-network-bandwidth-upload-label" "↑")
-download_label = $(get_tmux_option "@dracula-network-bandwidth-download-label" "↓")
-separation_label = $(get_tmux_option "@dracula-network-bandwidth-separation-label" "•")
+upload_label=$(get_tmux_option "@dracula-network-bandwidth-upload-label" "↑")
+download_label=$(get_tmux_option "@dracula-network-bandwidth-download-label" "↓")
+separation_label=$(get_tmux_option "@dracula-network-bandwidth-separation-label" "•")
 
 
 main() {
@@ -55,7 +55,7 @@ main() {
       output_upload_unit="kB/s"
     fi
 
-    echo "$upload_label $output_download $output_download_unit $separation_label $download_label $output_upload $output_upload_unit"
+    echo "$download_label $output_download $output_download_unit $separation_label $upload_label $output_upload $output_upload_unit"
   done
 }
 main
