@@ -130,10 +130,34 @@ Load average – is the average system load calculated over a given period of ti
 
 #### battery options
 
-Customize label
+Customize battery label
 
 ```bash
 set -g @dracula-battery-label "Battery"
+```
+
+Customize charging label
+
+```bash
+set -g @dracula-battery-charging-label "Charging"
+```
+
+Customize discharging label
+
+```bash
+set -g @dracula-battery-discharging-label "Discharging"
+```
+
+Customize no info label
+
+```bash
+set -g @dracula-battery-noinfo-label "No info"
+```
+
+Customize high charge label
+
+```bash
+set -g @dracula-battery-high-label "High"
 ```
 
 #### gpu-usage options

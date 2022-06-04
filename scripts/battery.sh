@@ -2,6 +2,13 @@
 # setting the locale, some users have issues with different locales, this forces the correct one
 export LC_ALL=en_US.UTF-8
 
+# configuration
+# @dracula-battery-label "♥"
+# @dracula-battery-charging-label "AC"
+# @dracula-battery-discharging-label ""
+# @dracula-battery-noinfo-label "?"
+# @dracula-battery-high-label ""
+
 current_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source $current_dir/utils.sh
 
@@ -87,16 +94,16 @@ battery_status()
 
   case $status in
     discharging|Discharging)
-      echo ''
+      echo $(get_tmux_option "@dracula-discharging-label")
       ;;
     high)
-      echo ''
+      echo $(get_tmux_option "@dracula-battery-high-label" "")
       ;;
     charging)
-      echo 'AC'
+      echo $(get_tmux_option "@dracula-charging-label" "AC")
       ;;
     *)
-      echo 'AC'
+      echo $(get_tmux_option "@dracula-battery-noinfo-label" "?")
       ;;
   esac
   ### Old if statements didn't work on BSD, they're probably not POSIX compliant, not sure
