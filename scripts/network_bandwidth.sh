@@ -7,6 +7,9 @@
 # @dracula-network-bandwidth-separation-label "•"
 # @dracula-network-bandwidth-interval 1
 
+current_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $current_dir/utils.sh
+
 INTERVAL=$(get_tmux_option "@dracula-network-bandwidth-interval" 1)  # update interval in seconds
 
 network_name=$(get_tmux_option "@dracula-network-bandwidth")

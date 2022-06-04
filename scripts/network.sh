@@ -5,6 +5,9 @@ export LC_ALL=en_US.UTF-8
 # configuration
 # @dracula-network-hostlist "google.com github.com example.com"
 
+current_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $current_dir/utils.sh
+
 HOSTS=$(get_tmux_option "@dracula-network-hostlist" "google.com github.com example.com")
 
 get_ssid()
