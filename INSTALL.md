@@ -195,6 +195,13 @@ set -g @dracula-ping-rate 5
 
 #### network-bandwidth options
 
+Customize refresh interval
+
+```bash
+set -g @dracula-network-bandwidth-interval 5
+```
+
+
 Customize upload label
 
 ```bash
