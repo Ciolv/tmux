@@ -8,7 +8,7 @@
 
 INTERVAL="1"  # update interval in seconds
 
-network_name=$(tmux show-option -gqv "@dracula-network-bandwidth")
+network_name=$(get_tmux_option "@dracula-network-bandwidth")
 upload_label = $(get_tmux_option "@dracula-network-bandwidth-upload-label" "↑")
 download_label = $(get_tmux_option "@dracula-network-bandwidth-download-label" "↓")
 separation_label = $(get_tmux_option "@dracula-network-bandwidth-separation-label" "•")
