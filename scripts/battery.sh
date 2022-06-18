@@ -98,7 +98,7 @@ battery_status()
     discharging)
       echo $(get_tmux_option "@dracula-battery-discharging-label")
       ;;
-    high)
+    high|full)
       echo $(get_tmux_option "@dracula-battery-high-label" "")
       ;;
     charging)
