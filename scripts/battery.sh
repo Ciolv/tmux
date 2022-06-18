@@ -31,10 +31,10 @@ linux_acpi() {
   else
     case "$arg" in
       status)
-        acpi | cut -d: -f2- | cut -d, -f1 | tr -d ' '
+        acpi | sort -t ',' -k 2 -b -h  --reverse | cut -d: -f2- | cut -d, -f1 | tr -d ' ' | head -1
         ;;
       percent)
-        acpi | cut -d: -f2- | cut -d, -f2 | tr -d '% '
+        acpi | sort -t ',' -k 2 -b -h  --reverse | cut -d: -f2- | cut -d, -f2 | tr -d '% ' | head -1
         ;;
       *)
         ;;
