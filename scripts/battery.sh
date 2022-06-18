@@ -92,8 +92,10 @@ battery_status()
       ;;
   esac
 
+  status=$(echo $status | tr '[:upper:]' '[:lower:]')
+
   case $status in
-    discharging|Discharging)
+    discharging)
       echo $(get_tmux_option "@dracula-battery-discharging-label")
       ;;
     high)
